@@ -1,0 +1,21 @@
+# Apache 2.2
+<IfModule !mod_authz_core.c>
+   <Files *.php>
+   order allow,deny
+   deny from all
+   </Files>
+   <FilesMatch "dialog\.php|upload\.php|force_download\.php|execute\.php|ajax_calls\.php">
+      Allow from all
+   </FilesMatch>
+</IfModule>
+
+# Apache 2.4
+<IfModule mod_authz_core.c>
+   <Files *.php>
+   order allow,deny
+   deny from all
+   </Files>
+   <FilesMatch "dialog\.php|upload\.php|force_download\.php|execute\.php|ajax_calls\.php">
+      Allow from all
+   </FilesMatch>
+</IfModule>

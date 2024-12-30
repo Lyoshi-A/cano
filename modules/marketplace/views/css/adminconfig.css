@@ -1,0 +1,58 @@
+/**
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License version 3.0
+* that is bundled with this package in the file LICENSE.txt
+* It is also available through the world-wide-web at this URL:
+* https://opensource.org/licenses/AFL-3.0
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade this module to a newer
+* versions in the future. If you wish to customize this module for your
+* needs please refer to CustomizationPolicy.txt file inside our module for more information.
+*
+* @author Webkul IN
+* @copyright Since 2010 Webkul
+* @license https://opensource.org/licenses/AFL-3.0 Academic Free License version 3.0
+*/
+
+.shipping_checkbox {
+    float: left;
+    width: 2%;
+}
+
+.checkbox_name {
+    float: left;
+    padding: 1px;
+}
+
+#bar-menu .col-sm-2 {
+    padding: 0 !important;
+}
+#bar-menu {
+    background-color: #fff;
+    /* border: 1px solid #d3d8db; */
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0;
+    margin-right: 0em;
+}
+
+#bar-menu ul li {
+    background-color: #fff;
+    border-bottom: 1px solid #d3d8db;
+    padding: 0;
+    margin-top: 0;
+}
+
+.barcode_nav>li>a:hover {
+    color: var(--edition-font-default) !important;
+    background-color: var(--edition-blue-100) !important;
+    border-color: var(--edition-black-default) !important;
+    border-radius: 0 !important;
+}
+
+.wk_display_none {
+    display: none;
+}

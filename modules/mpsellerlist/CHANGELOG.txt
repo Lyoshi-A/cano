@@ -1,0 +1,107 @@
+------------------------------------------------------------------------------------------------
+Change Log : V5.1.1 to V5.1.2 | COMPATIBLE:: PRESTASHOP V1.7 | V8.x.x  | MP V5.x.x and above
+------------------------------------------------------------------------------------------------
+Improvement:
+- Compatible with Marketplace V7.0.0
+- Design improvment
+- Code improvement
+
+Bug fixed:
+- Fixed filter issue
+- PSR 2 and validator issues fixed
+
+--------------------------------------------------------------
+Change Log : V5.1.0 to V5.1.1 | COMPATIBLE:: PRESTASHOP V1.7 | V8.x.x
+--------------------------------------------------------------
+Improvement:
+- Module is Compatible with marketplace version 5.4.0 and above
+- Compatible with PrestaShop V8.0.0
+- Text improvement
+- License header updated
+- Translation updated
+- Cross selling banner added
+
+Bug fixed:
+- Fixed display and responsive issues
+
+Update Policy:
+– Update only zip file of module new version
+
+--------------------------------------------------------------
+Change Log : V5.0.2 to V5.1.0 | COMPATIBLE:: PRESTASHOP V1.7 |
+--------------------------------------------------------------
+Improvement:
+- Module is Compatible with marketplace version 5.4.0
+
+Bug fixed:
+- Display issue at category menu on front end
+
+Update Policy:
+– Update only zip file of module new version
+
+--------------------------------------------------------------
+Change Log : V5.0.1 to V5.0.2 | COMPATIBLE:: PRESTASHOP V1.7 |
+--------------------------------------------------------------
+
+Improvement:
+- index.php new line updated
+- License year updated
+- PSR-2 code standard improved
+- New translations files added
+
+Bug fixed:
+- Static font removed
+- Fixed issue inappropriate view on sellerlist page,When product name is lengthy
+- Fixed issue inappropriate view at 'seller list page',when entered script tag.
+- Fixed issue issue at 'viewmoreproduct' page, while sorting with highest & lowest price.
+- Fixed issue missing product price at 'Seller List page'.
+- Fixed issue no result is shown on clicking search button,when searching with state .
+- Fixed issue seller search also should be based on state.
+- Fixed fatal error if there is no marketplace product
+- Fixed issue when searching shop name, location and seller name by hitting enter button
+--------------------------------------------------------------
+Change Log : V5.0.0 to V5.0.1 | COMPATIBLE:: PRESTASHOP V1.7 |
+--------------------------------------------------------------
+
+Fixed Bug:
+- Sorting issue fixed
+- Broken images issue fixed
+- all sellers are visible without click view more seller
+- no product found and no seller found message ( design issue )
+- product item design issue fixed
+- sellers search by shop location issue fixed
+- translation issue
+- text issue
+- issue fixed when marketplace module disabled
+- breadcrumb issue
+- view more product issue
+- search box issue in translation and design
+- design issue with larger seller name and product name
+
+Improvement:
+- Configuration page in multilanguage
+- message on seller list page (special chars issue)
+
+Update Policy:
+– Update only zip file of module new version
+
+
+--------------------------------------------------------------
+Change Log : V2.1.0 to V4.0.0 | COMPATIBLE:: PRESTASHOP V1.7 |
+--------------------------------------------------------------
+
+Compatible:
+- front setTemplate() updated, {extends file=$layout} and {block name='content'} on tpl added
+- {convertPrice price=$} removed from tpls, sending by displayPrice() from controller
+- $this->pagination() removed from collection front controller
+- $this->registerStylesheet and registerJavascript added
+- html escape removed from tpls
+- main page 'display()' changed in 'fetch()'
+
+Added new files:
+- header_style.css removed and add wk_sellerlist_header.css  new css file added
+- add CHANGELOG.txt file
+- add LICENCE.txt file
+
+Deleted:
+- header_style.css file

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>mpsellerlist</name>
+    <displayName><![CDATA[Marketplace Seller List]]></displayName>
+    <version><![CDATA[5.1.2]]></version>
+    <description><![CDATA[Listing seller in your shop related to marketplace.]]></description>
+    <author><![CDATA[Webkul]]></author>
+    <tab><![CDATA[front_office_features]]></tab>
+	<confirmUninstall><![CDATA[Are you sure you want to uninstall this module.]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+</module>

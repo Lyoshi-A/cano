@@ -1,0 +1,393 @@
+/**
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License version 3.0
+* that is bundled with this package in the file LICENSE.txt
+* It is also available through the world-wide-web at this URL:
+* https://opensource.org/licenses/AFL-3.0
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade this module to a newer
+* versions in the future. If you wish to customize this module for your needs
+* please refer to CustomizationPolicy.txt file inside our module for more information.
+*
+* @author Webkul IN
+* @copyright Since 2010 Webkul
+* @license https://opensource.org/licenses/AFL-3.0 Academic Free License version 3.0
+*/
+
+body
+{
+	font-family: 'open sans',sans-serif;
+	background-color: white;
+}
+
+.create_block
+{
+	float: left;
+	width: 100%;
+}
+
+.clear-both
+{
+	clear: both !important;
+}
+
+.bg-img-style
+{
+	background-position: 98% center;
+	background-repeat: no-repeat;
+}
+
+.margin-right-5
+{
+	margin-right: 5px;
+}
+
+.padding-10
+{
+	padding: 10px;
+}
+
+.margin-top-10
+{
+	margin-top: 10px;
+}
+
+.margin-top-20
+{
+	margin-top: 20px;
+}
+
+.margin-bottom-20
+{
+	margin-bottom: 20px;
+}
+
+.break_word
+{
+	word-wrap: break-word;
+}
+
+#header_container
+{
+	background-color: white;
+	float: left;
+	width: 100%;
+	box-shadow: 0px 1px 3px #CDD1D2;
+}
+#page_header
+{
+	padding: 10px 0px !important;
+}
+
+#shop_logo
+{
+	max-height: 65px;
+}
+
+/* #header_logo, #header_login
+{
+	margin: 15px 0 15px 0 !important
+} */
+
+#header_login input
+{
+	/* margin: 0 0 10px 0; */
+	font-size: 1rem;
+	line-height: 1.25;
+	/* border-radius: 4px; */
+	padding: .5rem 1rem;
+	color: #7a7a7a;
+	background: #f6f6f6;
+	border: 1px solid rgba(0,0,0,.25);
+}
+
+#header_login button
+{
+	border-radius: 0px;
+	font-weight: bold;
+	padding: .5rem 1rem;
+}
+
+.wk_login_field
+{
+	border: 1px solid #cccccc;
+    color: #333333;
+}
+
+.form_wrapper
+{
+	background-color: #FBFBFB;
+	border: 1px solid #DDDDDD;
+	padding: 10px 20px;
+}
+
+.hr_style
+{
+	color: #C7C7C7;
+}
+
+.mand_field
+{
+	font-size: 14px;
+	color: red;
+}
+
+.form_heading
+{
+	font-size: 18px;
+	font-weight: 600px;
+}
+
+.field_label
+{
+	width: 100%;
+	margin-bottom: 15px;
+	text-align: left;
+}
+
+.form_button
+{
+	width: 100%;
+	text-align: center;
+	font-size: 17px;
+	color: #ffffff;
+	font-weight: 600px;
+	border-radius: 0px;
+}
+
+.field_heading
+{
+	font-size: 14px;
+	font-weight: 600px;
+}
+
+#form_shop_info
+{
+	display: none;
+}
+
+.alert_block
+{
+	margin-top: 15px;
+}
+
+.field_label input
+{
+	font-weight: normal;
+}
+
+.mp_error_block
+{
+	background-color: #C9302C;
+	color: white;
+	display: none;
+    float: left;
+    font-size: 11px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    padding: 4px 7px;
+    width: 100%;
+}
+
+.check_email
+{
+    float: left;
+    width: 100%;
+	color: black;
+	background-color: #FCF8E3;
+	display: none;
+    font-size: 11px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    padding: 4px 7px;
+}
+
+#wk-shop-form
+{
+	color: #337AB7;
+	cursor: pointer;
+}
+
+.banner_block
+{
+	width: 100%;
+	/*height: 550px;*/
+	float: left;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.title_style
+{
+	font-size: 37px;
+	font-weight: 700;
+	margin-top: 20%;
+	line-height: 52px;
+	background: rgba(231, 214, 214, 0.5);
+	text-align: center;
+	max-width: 600px;
+	border-radius: 10px;
+}
+
+/* ---- Feature ---- */
+.ftr_cont
+{
+	margin-bottom: 50px;
+}
+
+.ftr_heading
+{
+	padding-top: 35px;
+	font-size: 2rem;
+	font-weight: 600;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.ftr_desc
+{
+	text-align: center;
+	font-style: 17px;
+	font-weight: 400;
+}
+
+.ftr_detail
+{
+	margin-top: 45px;
+	text-align: center;
+}
+
+.ftr_subhead
+{
+	padding-top: 10px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.ftr_subdesc
+{
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.hr_style
+{
+	border-width: 1px;
+	border-color: #0F337A;
+}
+
+.tc_cont
+{
+	font-size: 15px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+/* ---- error block css ---- */
+
+.error_block
+{
+	display: none;
+	position: fixed;
+	bottom: 0;
+	float: left;
+	width: 100%;
+	background-color: #dc3d3d;
+    color: white;
+    font-weight: 600;
+    padding: 20px 10px;
+    text-align: center;
+}
+.error_block p {
+	color: white;
+}
+
+/* ---- error block css ---- */
+
+/* ---- language drop down block css ---- */
+.dropdown-menu {
+	border-radius: 0px !important;
+	margin: 0 9px !important;
+}
+
+@media only screen and (max-width: 767px) {
+  #header_logo a {
+    width: 100%;
+    display: block;
+  }
+  #shop_logo {
+  	margin: 0 auto;
+  }
+  #language_div{
+  	text-align: center;
+  }
+  #language_div div.btn-group{
+  	float: none !important;
+  }
+  .wk-forgot {
+	margin-right: 5px !important;
+  }
+}
+
+#header_login form.pull-right
+{
+	float: right;
+}
+section#wrapper
+{
+	padding-top: 0px;
+}
+hr.hr_style {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+body footer#footer, .wk_pd_0{
+	padding: 0px;
+}
+#wrapper > .container {
+    max-width: 100%;
+    padding: 0;
+    width: 100% !important;
+}
+.wk-forgot {
+	float:right;
+	margin-right: 75px;
+}
+.wk-forgot a {
+	color: #fff !important;
+	font-size: 11px;
+}
+.wk-forgot a:hover {
+	color: #24b9d7 !important;
+}
+#form_acc_info {
+	margin: 10px 20px;
+}
+.dropdown-menu > li > a {
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: 400;
+	line-height: 1.42857143;
+	color: #333;
+	white-space: nowrap;
+}
+.wk-seller-login-text {
+	color: #fff !important;
+}
+.wk_loginform {
+	vertical-align: unset;
+	color: #fff;
+	background-color: #24b9d7;
+	border-color: transparent;
+}
+#login_email, #login_passwd,
+#mp_register_form input.form-control,
+#mp_register_form select.form-control {
+	outline: none !important;
+}

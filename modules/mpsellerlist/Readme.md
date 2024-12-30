@@ -1,0 +1,1 @@
+- Marketplace SellerList V5.1.2 compatible with PrestaShop V1.7.x.x & V8.x.x and Marketplace V5.x.x and above
