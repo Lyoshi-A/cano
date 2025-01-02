@@ -11,6 +11,7 @@ body {
 
 #header {
     background: #FFFDF1;
+    position: relative;
 }
 
 #header .header-nav .cart-preview, .btn {
@@ -19,6 +20,67 @@ body {
     border-radius: 24px;
     border: 1px solid #1E1E1E;
     margin: .4rem;
+}
+
+#header.is-open .popup-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
+}
+
+#header .popup-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    z-index: -10000;
+    background: #F3FC54;
+    border: 1px solid #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+}
+
+#header .popup-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#header .popup-menu li {
+    padding: 15px 12px;
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+#header .popup-menu li p {
+    text-decoration: none;
+    font-size: 0.7rem;
+    display: block;
+    text-align: left;
+    color: #000;
+    text-transform: uppercase;
+}
+
+#header .popup-menu li a {
+    text-decoration: none;
+    display: block;
+    font-size: 1.7rem;
+    text-align: left;
+    color: #000;
+    text-transform: uppercase;
+}
+
+#header .popup-menu li a:hover {
+    background: #f0f0f0;
 }
 
 #wrapper {

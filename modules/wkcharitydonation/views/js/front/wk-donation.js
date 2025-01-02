@@ -27,7 +27,7 @@ $(document).ready(function(){
     $(document).on('click', '.remove-from-cart', function(e) {
         setTimeout(() => {
             location.reload();
-        }, 500);
+        }, 100);
     });
 
     //product page donation validation
