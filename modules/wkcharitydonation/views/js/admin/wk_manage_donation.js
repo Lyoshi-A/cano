@@ -45,17 +45,41 @@ $(document).ready(function(){
     if(parseInt($('#price_type').val()) == 1) {
         $('#fixed').removeClass('hidden');
         $('#minimum_price').addClass('hidden');
+        $('#percent').addClass('hidden');
+        $('#price_currency').removeClass('hidden');
+        $('#price_percent').addClass('hidden');
     } else if(parseInt($('#price_type').val()) == 2) {
         $('#fixed').addClass('hidden');
         $('#minimum_price').removeClass('hidden');
+        $('#percent').addClass('hidden');
+        $('#price_currency').removeClass('hidden');
+        $('#price_percent').addClass('hidden');
+    } else if(parseInt($('#price_type').val()) == 3) {
+        $('#fixed').addClass('hidden');
+        $('#minimum_price').addClass('hidden');
+        $('#percent').removeClass('hidden');
+        $('#price_currency').addClass('hidden');
+        $('#price_percent').removeClass('hidden');
     }
     $('#price_type').on('change',function(){
         if(parseInt($(this).val()) == 1) {
             $('#fixed').removeClass('hidden');
             $('#minimum_price').addClass('hidden');
+            $('#percent').addClass('hidden');
+            $('#price_currency').removeClass('hidden');
+            $('#price_percent').addClass('hidden');
         } else if(parseInt($(this).val()) == 2) {
             $('#fixed').addClass('hidden');
             $('#minimum_price').removeClass('hidden');
+            $('#percent').addClass('hidden');
+            $('#price_currency').removeClass('hidden');
+            $('#price_percent').addClass('hidden');
+        } else if(parseInt($(this).val()) == 3) {
+            $('#fixed').addClass('hidden');
+            $('#minimum_price').addClass('hidden');
+            $('#percent').removeClass('hidden');
+            $('#price_currency').addClass('hidden');
+            $('#price_percent').removeClass('hidden');
         }
     });
 

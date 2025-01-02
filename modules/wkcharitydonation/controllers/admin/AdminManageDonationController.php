@@ -56,6 +56,7 @@ class AdminManageDonationController extends ModuleAdminController
         $priceType = [];
         $priceType[WkDonationInfo::WK_DONATION_PRICE_TYPE_FIXED] = $this->l('Fixed');
         $priceType[WkDonationInfo::WK_DONATION_PRICE_TYPE_CUSTOMER] = $this->l('By customer');
+        $priceType[WkDonationInfo::WK_DONATION_PRICE_TYPE_PERCENT] = $this->l('Percent');
 
         if (Shop::isFeatureActive() && Shop::getContext() == Shop::CONTEXT_ALL) {
             $this->_select .= ', sh.`name` as wk_donation_info_shop_name';
@@ -74,14 +75,18 @@ class AdminManageDonationController extends ModuleAdminController
             'price_type' => [
                 'title' => $this->l('Price type'),
                 'type' => 'select',
-                'hint' => $this->l('\'Fixed\' means donation amount is fixed, \'By customer\' means donation amount can be entered by customer'),
+                'hint' => $this->l('\'Fixed\' means donation amount is fixed, 
+                \'By customer\' means donation amount can be entered by customer,
+                \'Percent\' means donation amount is calculated as % from order total,'
+                ),
                 'list' => $priceType,
                 'filter_key' => 'a!price_type',
                 'callback' => 'getPriceType',
             ],
             'price' => [
                 'title' => $this->l('Price'),
-                'type' => 'price',
+                'align' => 'right',
+                'type' => 'decimal',
                 'filter_key' => 'a!price',
             ],
             'advertise' => [
@@ -272,6 +277,8 @@ class AdminManageDonationController extends ModuleAdminController
             return $this->l('Fixed');
         } elseif ($row == WkDonationInfo::WK_DONATION_PRICE_TYPE_CUSTOMER) {
             return $this->l('By customer');
+        } elseif ($row == WkDonationInfo::WK_DONATION_PRICE_TYPE_PERCENT) {
+            return $this->l('Percent');
         }
     }
 

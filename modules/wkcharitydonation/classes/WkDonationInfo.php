@@ -25,6 +25,7 @@ class WkDonationInfo extends ObjectModel
 {
     public const WK_DONATION_PRICE_TYPE_FIXED = 1;
     public const WK_DONATION_PRICE_TYPE_CUSTOMER = 2;
+    public const WK_DONATION_PRICE_TYPE_PERCENT = 3;
 
     public $id_donation_info;
     public $id_product;

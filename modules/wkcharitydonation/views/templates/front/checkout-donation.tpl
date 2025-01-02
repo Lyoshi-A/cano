@@ -37,11 +37,12 @@
 						{include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
 					{/block}
 				</div>
-
+				{if (!$disableDonation)}
 				{block name="charity_and_donation"}
 					<div class="card">
 						<div class="card-block">
-							<h1 class="h1">{l s='DONATIONS AND CHARITY' mod='wkcharitydonation'}</h1>
+							<h1 class="h1">{l s='DONATIONS AND CHARITY ' mod='wkcharitydonation'}</h1>
+							<span>{if (!$disableDonation)}(Select program below){/if}</span>
 						</div>
 						<hr class="separator">
 						<div class="charity-block">
@@ -62,10 +63,19 @@
 												{if ($checkoutDonation['price_type']) == 1}
 													<strong>{$checkoutDonation['displayPrice']|escape:'html':'UTF-8'}</strong>
 													<input type="hidden" value={$checkoutDonation['id_donation_info']|escape:'html':'UTF-8'} name="id_donation_info" class="id-donation-info">
-												{else}
+												{/if}
+												{if ($checkoutDonation['price_type']) == 2}
 													<div class="input-group">
 														<span class="input-group-addon">{$currency_sign|escape:'html':'UTF-8'}</span>
 														<input type="text" class="input-group form-control donation-price" name="donation_price" value="{$checkoutDonation['price']|escape:'html':'UTF-8'}">
+														<input type="hidden" value={$checkoutDonation['id_donation_info']|escape:'html':'UTF-8'} name="id_donation_info" class="id-donation-info">
+													</div>
+												{/if}
+												{if ($checkoutDonation['price_type']) == 3}
+													<div class="input-group">
+														<span class="input-group-addon">{$currency_sign|escape:'html':'UTF-8'}</span>
+														<input disabled type="text" class="input-group form-control" value="{$checkoutDonation['price']|escape:'html':'UTF-8'}({$checkoutDonation['percent']}%)">
+														<input type="hidden" class="donation-price" name="donation_price" value="{$checkoutDonation['price']}">
 														<input type="hidden" value={$checkoutDonation['id_donation_info']|escape:'html':'UTF-8'} name="id_donation_info" class="id-donation-info">
 													</div>
 												{/if}
@@ -77,7 +87,7 @@
 									</div>
 									<div class="col-xs-3 donation-btn">
 										<input type="hidden" name="add-donation-to-cart">
-										<button type="submit" class="btn btn-primary btn-xs donation-btn-text submitDonationForm">{l s='DONATE' mod='wkcharitydonation'}</button>
+										<button{if ($disableDonation)} disabled{/if} type="submit" class="btn btn-primary btn-xs donation-btn-text submitDonationForm">{l s='DONATE' mod='wkcharitydonation'}</button>
 									</div>
 								</form>
 								{if ($checkoutDonation['price_type']) == 2}
@@ -89,6 +99,7 @@
 						</div>
 					</div>
 				{/block}
+				{/if}
 
 				{block name='continue_shopping'}
 					<a class="label" href="{$urls.pages.index|escape:'html':'UTF-8'}">
@@ -117,7 +128,7 @@
 						{/block}
 
 						{block name='cart_actions'}
-							{include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
+							{include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart disableDonation=$disableDonation}
 						{/block}
 
 					</div>

@@ -130,8 +130,9 @@
                         </label>
                         <div class="col-sm-3">
                             <select name="price_type" class="" id="price_type">
-                                <option value="1" selected>{l s='Fixed' mod='wkcharitydonation'}</option>
+                                <option value="1" {if isset($smarty.post.price_type) && $smarty.post.price_type == 1}selected{elseif isset($donationInfo.price_type) && $donationInfo.price_type == 1}selected{/if}>{l s='Fixed' mod='wkcharitydonation'}</option>
                                 <option value="2" {if isset($smarty.post.price_type) && $smarty.post.price_type == 2}selected{elseif isset($donationInfo.price_type) && $donationInfo.price_type == 2}selected{/if}>{l s='By customer' mod='wkcharitydonation'}</option>
+                                <option value="3" selected>{l s='Percent' mod='wkcharitydonation'}</option>
                             </select>
                             <div class="help-block"></div>
                         </div>
@@ -143,10 +144,14 @@
                         <label for="price" class="col-sm-3 control-label required hidden" id="minimum_price">
                             <span class="label-tooltip" data-toggle="tooltip" title="" data-original-title="{l s='If price is "fixed" then this price will be taken as fixed price. If price type is "by customer" then this price will be taken as minimum price which customer can donate.' mod='wkcharitydonation'}">{l s='Minimum price' mod='wkcharitydonation'}</span>
                         </label>
+                        <label for="price" class="col-sm-3 control-label required hidden" id="percent">
+                            <span class="label-tooltip" data-toggle="tooltip" title="" data-original-title="{l s='If price is "percent" then this % will be taken from order total price.' mod='wkcharitydonation'}">{l s='Percent' mod='wkcharitydonation'}</span>
+                        </label>
                         <div class="col-sm-3">
                             <div class="input-group">
                                 <input type="text" id="price" name="price" value="{if isset($smarty.post.price)}{$smarty.post.price|escape:'htmlall':'UTF-8'}{elseif isset($donationInfo.price)}{$donationInfo.price|escape:'htmlall':'UTF-8'}{/if}" class="form-control">
-                                <span class="input-group-addon">{$defaultCurrencySign|escape:'html':'UTF-8'}</span>
+                                <span class="input-group-addon hidden" id="price_currency">{$defaultCurrencySign|escape:'html':'UTF-8'}</span>
+                                <span class="input-group-addon hidden" id="price_percent">%</span>
                             </div>
                         </div>
                     </div>

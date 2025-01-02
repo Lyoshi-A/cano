@@ -248,8 +248,8 @@ class AdminDonationStatsController extends ModuleAdminController
             ],
             'price' => [
                 'title' => $this->l('Price'),
-                'align' => 'center',
-                'type' => 'price',
+                'align' => 'right',
+                'type' => 'decimal',
                 'search' => false,
             ],
             'date_add' => [
@@ -419,6 +419,8 @@ class AdminDonationStatsController extends ModuleAdminController
             return $this->l('Fixed');
         } elseif ($row == WkDonationInfo::WK_DONATION_PRICE_TYPE_CUSTOMER) {
             return $this->l('By customer');
+        } elseif ($row == WkDonationInfo::WK_DONATION_PRICE_TYPE_PERCENT) {
+            return $this->l('Percent');
         }
     }
 

@@ -24,12 +24,17 @@ $(document).ready(function(){
         }
     });
 
+    $(document).on('click', '.remove-from-cart', function(e) {
+        setTimeout(() => {
+            location.reload();
+        }, 500);
+    });
+
     //product page donation validation
     $(document).on("click", ".donation-add-to-cart", function(e) {
         price = $("input#donation-price-input");
         idDonationInfo = $("input.id-donation-info");
         priceError = $("p.price-error");
-
         $.ajax({
             url: addDonationControllerlink,
             cache: false,

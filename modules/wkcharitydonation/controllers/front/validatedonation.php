@@ -71,6 +71,17 @@ class WkCharityDonationValidateDonationModuleFrontController extends ModuleFront
                 }
             } elseif ($objDonationInfo->price_type == WkDonationInfo::WK_DONATION_PRICE_TYPE_FIXED) {
                 $price = Tools::convertPriceFull($objDonationInfo->price, null, $this->context->currency);
+            } elseif ($objDonationInfo->price_type == WkDonationInfo::WK_DONATION_PRICE_TYPE_PERCENT) {
+                $donation_price = Tools::getValue('donation_price');
+                if (empty($donation_price)) {
+                    $result['errors'] = $this->module->l('Donation amount must not be empty', 'validatedonation');
+                } elseif (Validate::isPrice($donation_price)) {
+                    $price = Tools::convertPriceFull($donation_price, null, $this->context->currency);
+                } else {
+                    $result['errors'][] = $this->module->l('Invalid donation amount', 'validatedonation');
+                }
+
+
             }
             if (empty($result['errors'])) {
                 if (isset($this->context->cart->id) && $this->context->cart->id) {
@@ -92,7 +103,7 @@ class WkCharityDonationValidateDonationModuleFrontController extends ModuleFront
                 }
                 $objDonationInfo->setSpecificPrice(
                     $objDonationInfo->id_product,
-                    $price / $this->context->currency->conversion_rate
+                    ($price)/ $this->context->currency->conversion_rate
                 );
                 if (Tools::getValue('addProduct') == 1) {
                     if (!$this->context->cart->updateQty(

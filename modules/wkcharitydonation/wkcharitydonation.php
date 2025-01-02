@@ -350,14 +350,40 @@ class WkCharityDonation extends Module
     {
         if ('checkout/cart' === $params['template_file']) {
             $objDonationInfo = new WkDonationInfo();
+            $products = $this->context->cart->getProducts();
+
             if ($idDonationInfo = $objDonationInfo->getCheckoutDonations($this->context->shop->id)) {
+                $donationIds = [];
+                $checkoutProducts = [];
                 $checkoutDonations = [];
+                $disableDonation = false;
+                $totalPrice = 0 ;
                 foreach ($idDonationInfo as $idCheckoutDonation) {
                     $objCheckoutdonation = new WkDonationInfo($idCheckoutDonation['id_donation_info']);
-                    $objCheckoutdonation->price = Tools::ps_round(
-                        Tools::convertPrice($objCheckoutdonation->price),
-                        Configuration::get('PS_PRICE_DISPLAY_PRECISION')
-                    );
+                    $donationIds[$objCheckoutdonation->id_product] = true;
+                }
+                foreach ($products as $product) {
+                    $checkoutProducts[$product["id_product"]] = true;
+                    if (!isset($donationIds[$product["id_product"]])) $totalPrice += $product["price"];
+                }
+                foreach ($idDonationInfo as $idCheckoutDonation) {
+                    $objCheckoutdonation = new WkDonationInfo($idCheckoutDonation['id_donation_info']);
+                    if ($objCheckoutdonation->price_type == 3) {
+                        if (isset($checkoutProducts[$objCheckoutdonation->id_product])
+                            && $checkoutProducts[$objCheckoutdonation->id_product]) {
+                            $disableDonation = true;
+                        }
+                        $objCheckoutdonation->percent = Tools::ps_round($objCheckoutdonation->price);
+                        $objCheckoutdonation->price = Tools::ps_round(
+                            Tools::convertPrice($totalPrice/100 * $objCheckoutdonation->price),
+                            Configuration::get('PS_PRICE_DISPLAY_PRECISION')
+                        );
+                    } else {
+                        $objCheckoutdonation->price = Tools::ps_round(
+                            Tools::convertPrice($objCheckoutdonation->price),
+                            Configuration::get('PS_PRICE_DISPLAY_PRECISION')
+                        );
+                    }
                     $objCheckoutdonation->link = $this->context->link->getProductLink($objCheckoutdonation->id_product);
                     $objCheckoutdonation->displayPrice = WkDonationInfo::displayprice($objCheckoutdonation->price);
                     $checkoutDonations[] = (array) $objCheckoutdonation;
@@ -367,6 +393,7 @@ class WkCharityDonation extends Module
                     $columns = '1';
                 }
                 $this->context->smarty->assign([
+                    'disableDonation' => $disableDonation,
                     'checkoutDonations' => $checkoutDonations,
                     'id_current_lang' => $this->context->language->id,
                     'currency_sign' => $this->context->currency->sign,
