@@ -37,12 +37,12 @@
 						{include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
 					{/block}
 				</div>
-				{if (!$disableDonation)}
 				{block name="charity_and_donation"}
+				{if (!$disableDonation)}
 					<div class="card">
 						<div class="card-block">
 							<h1 class="h1">{l s='DONATIONS AND CHARITY ' mod='wkcharitydonation'}</h1>
-							<span>{if (!$disableDonation)}(Select program below){/if}</span>
+							<span>{if (!$disableDonation)}Please select any charity programs below to proceed. By completing your purchase, you authorize us to direct a percentage of the proceeds to support this program{/if}</span>
 						</div>
 						<hr class="separator">
 						<div class="charity-block">
@@ -98,8 +98,9 @@
 							{/foreach}
 						</div>
 					</div>
+			     {/if}
 				{/block}
-				{/if}
+
 
 				{block name='continue_shopping'}
 					<a class="label" href="{$urls.pages.index|escape:'html':'UTF-8'}">

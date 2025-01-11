@@ -23,6 +23,81 @@ if (!defined('_PS_VERSION_')) {
 
 class WkCharityDonationValidateDonationModuleFrontController extends ModuleFrontController
 {
+    private function testAndUpdateCart()
+    {
+        $result = [];
+        if (isset($this->context->cart->id) && $this->context->cart->id) {
+            $objDonationInfo = new WkDonationInfo();
+            $products = $this->context->cart->getProducts();
+            if ($idDonationInfo = $objDonationInfo->getCheckoutDonations($this->context->shop->id)) {
+                $donations = [];
+                $donationsInCart = [];
+                $totalPrice = 0;
+                foreach ($idDonationInfo as $idCheckoutDonation) {
+                    $objCheckoutdonation = new WkDonationInfo($idCheckoutDonation['id_donation_info']);
+                    $donations[$objCheckoutdonation->id_product] = $objCheckoutdonation;
+                }
+
+                foreach ($products as $product) {
+                    if (!isset($donations[$product["id_product"]])) {
+                        $totalPrice += $product["total"];
+                    } else {
+                        $donationsInCart[$product["id_product"]] = $product;
+                    }
+                }
+                if ($totalPrice === 0) {
+                    foreach ($donationsInCart as $productId => $donation) {
+                        $this->context->cart->deleteProduct($productId, 0);
+
+                    }
+                } else {
+                    foreach ($donationsInCart as $productId => $donation) {
+                        $expected_price = $totalPrice / 100 * $donations[$productId]->price;
+                        if (round($donation['price']) != round($expected_price)) {
+                            $this->context->cart->deleteProduct($productId, 0);
+                            $donations[$productId]->setSpecificPrice(
+                                $productId,
+                                ($expected_price)/ $this->context->currency->conversion_rate,
+                                true
+                            );
+                            if (!$this->context->cart->updateQty(
+                                1,
+                                $productId,
+                                null,
+                                null,
+                                'up',
+                                0,
+                                new Shop($this->context->cart->id_shop)
+                            )){
+                                $result['errors'][] = $this->module->l('Some error occurred in donation process. Please try again.', 'validatedonation');
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        return $result;
+    }
+    public function displayAjaxUpdateDonation()
+    {
+        $result = [];
+        $result['status'] = 0;
+        $result['errors'] = [];
+        $result['result'] = [];
+        if (!$this->isTokenValid()) {
+            $result['errors'][] = $this->module->l('Unauthorised access', 'updateDonation');
+        } else {
+            if (empty($result['errors'])) {
+                $result['result'] = $this->testAndUpdateCart();
+            }
+
+        }
+        if (!$result['errors']) {
+            $result['status'] = 1;
+        }
+        $this->ajaxDie(json_encode($result));
+    }
     public function displayAjaxCheckMinimumPrice()
     {
         $result = [];
@@ -103,7 +178,8 @@ class WkCharityDonationValidateDonationModuleFrontController extends ModuleFront
                 }
                 $objDonationInfo->setSpecificPrice(
                     $objDonationInfo->id_product,
-                    ($price)/ $this->context->currency->conversion_rate
+                    ($price)/ $this->context->currency->conversion_rate,
+                    $objDonationInfo->price_type == WkDonationInfo::WK_DONATION_PRICE_TYPE_PERCENT
                 );
                 if (Tools::getValue('addProduct') == 1) {
                     if (!$this->context->cart->updateQty(

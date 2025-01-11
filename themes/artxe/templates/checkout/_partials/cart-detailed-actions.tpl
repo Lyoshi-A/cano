@@ -37,7 +37,7 @@
       </div>
     {else}
       <div class="text-sm-center">
-        <a href="{$urls.pages.order}" class="btn btn-primary{if (!$disableDonation)} disabled{/if}">{l s='Proceed to checkout' d='Shop.Theme.Actions'}</a>
+        <a id="checkout_link" href="{$urls.pages.order}" class="btn btn-primary{if (!$disableDonation)} disabled{/if}">{l s='Proceed to checkout' d='Shop.Theme.Actions'}</a>
         {hook h='displayExpressCheckout'}
       </div>
     {/if}

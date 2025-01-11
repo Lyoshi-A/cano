@@ -24,10 +24,43 @@ $(document).ready(function(){
         }
     });
 
+    const callUpdateDonates = () => {
+        $.ajax({
+            url: addDonationControllerlink,
+            cache: false,
+            method: 'GET',
+            dataType: 'json',
+            data: {
+                ajax: true,
+                action: 'updateDonation',
+                token: ajaxToken,
+            },
+            success: function (data) {
+                if (data.status == 0) {
+                    console.error(data.errors);
+                    // $(priceError).removeClass("hide")
+                    // $(priceError).text(data.errors);
+                    // $(price).css('border-color', 'red');
+                } else {
+                    location.reload();
+                    // $(".add-to-cart").click();
+                }
+            }
+        });
+    }
+
     $(document).on('click', '.remove-from-cart', function(e) {
+        $('#checkout_link').addClass('disabled');
         setTimeout(() => {
-            location.reload();
+           callUpdateDonates();
         }, 100);
+    });
+
+    $(document).on('change', '.js-cart-line-product-quantity.form-control', function(e) {
+        $('#checkout_link').addClass('disabled');
+        setTimeout(() => {
+            callUpdateDonates();
+        }, 500);
     });
 
     //product page donation validation

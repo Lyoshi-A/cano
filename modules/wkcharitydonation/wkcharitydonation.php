@@ -364,7 +364,7 @@ class WkCharityDonation extends Module
                 }
                 foreach ($products as $product) {
                     $checkoutProducts[$product["id_product"]] = true;
-                    if (!isset($donationIds[$product["id_product"]])) $totalPrice += $product["price"];
+                    if (!isset($donationIds[$product["id_product"]])) $totalPrice += $product["price"] * $product["cart_quantity"];
                 }
                 foreach ($idDonationInfo as $idCheckoutDonation) {
                     $objCheckoutdonation = new WkDonationInfo($idCheckoutDonation['id_donation_info']);
@@ -395,6 +395,7 @@ class WkCharityDonation extends Module
                 $this->context->smarty->assign([
                     'disableDonation' => $disableDonation,
                     'checkoutDonations' => $checkoutDonations,
+                    'products' => $products,
                     'id_current_lang' => $this->context->language->id,
                     'currency_sign' => $this->context->currency->sign,
                     'cart_url' => $this->context->link->getPageLink('cart') . '?action=show',
@@ -402,6 +403,7 @@ class WkCharityDonation extends Module
                 ]);
 
                 return dirname(__FILE__) . '/views/templates/front/checkout-donation.tpl';
+//                return dirname(__FILE__) . '/templates/checkout/_partials/donation.tpl';
             }
         }
         if ('catalog/_partials/quickview' == $params['template_file']) {

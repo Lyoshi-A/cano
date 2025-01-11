@@ -642,5 +642,15 @@ ul.dropdown-menu.hidden-sm-down {
     margin: 0px;
     background: transparent;
 }
+.btn-touchspin {
+    margin: 0;
+}
+
+.btn-touchspin:hover {
+    color: #1E1E1E;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .25);
+}
+
 
 }

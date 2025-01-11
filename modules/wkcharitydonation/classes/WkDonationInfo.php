@@ -363,7 +363,7 @@ class WkDonationInfo extends ObjectModel
         );
     }
 
-    public function setSpecificPrice($idProduct, $price)
+    public function setSpecificPrice($idProduct, $price, $reset = false)
     {
         if (!$idCustomer = Context::getContext()->customer->id) {
             $idCustomer = 0;
@@ -372,7 +372,9 @@ class WkDonationInfo extends ObjectModel
         $price = Tools::ps_round($price, 6);
         if ($idSpecificPrice = $this->checkExistingSpecificPrice($idProduct, $idCustomer, $idCart)) {
             $objSpecificPrice = new SpecificPrice($idSpecificPrice);
-            $price += $objSpecificPrice->price;
+            if (!$reset) {
+                $price += $objSpecificPrice->price;
+            }
         } else {
             $objSpecificPrice = new SpecificPrice();
         }
