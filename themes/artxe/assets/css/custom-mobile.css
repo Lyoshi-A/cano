@@ -9,6 +9,11 @@ body {
     background: #FFFDF1;
 }
 
+main {
+    margin: 5%;
+    overflow: hidden;
+}
+
 #header {
     background: #FFFDF1;
     position: relative;
@@ -630,5 +635,36 @@ a.btn.btn-default {
         padding: 2%;
         border-bottom: 1px solid rgba(0, 0, 0, .25);
     }
+    /*shopping-cart*/
+    .card {
+        background-color: unset;
+    }
+    .card .card-block .h1{
+        padding: 1rem 0;
+    }
+    .cart-grid-body{
+        padding-left:5%;
+    }
+    .card.cart-container, .card.cart-summary{
+        background-color: unset;
+    }
 
+    .card .charity-block .donation-btn .btn {
+        margin: 0;
+    }
+
+    .card .cart-item {
+        border-bottom: 1px solid rgba(0, 0, 0, .25);
+    }
+
+    .card .cart-item .price, .card .cart-item .text-info, .card .cart-item .text-info:hover{
+        color: #98B400 !important;;
+    }
+
+    .card input.form-control, .card .btn.btn-touchspin{
+        background: #FFFDF1;
+    }
+    .product-line-grid {
+        text-align: justify;
+    }
 }

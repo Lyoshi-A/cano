@@ -54,7 +54,7 @@
 											<strong>{if $checkoutDonation['product_visibility'] == 1}<a href="{$checkoutDonation['link']|escape:'html':'UTF-8'}" class="label">{/if}{$checkoutDonation['name'][$id_current_lang]|escape:'html':'UTF-8'}{if $checkoutDonation['product_visibility'] == 1}</a>{/if}</strong>
 										</div>
 										<div class="donation-description">
-											{$checkoutDonation['description'][$id_current_lang] nofilter}
+											{$checkoutDonation['description'][$id_current_lang]|escape:'html':'UTF-8'|truncate:200:'...' nofilter}
 										</div>
 									</div>
 									<div class="{if isset($columnLayout) && $columnLayout == 0}col-xs-12{else}col-xs-3{/if} donation-price-div">

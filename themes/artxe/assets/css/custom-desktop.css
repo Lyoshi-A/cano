@@ -723,7 +723,7 @@ ul.dropdown-menu.hidden-sm-down {
     #donation_steps.donation-hiw {
         padding: 1% 5%;
         max-height: 100%;
-        display: flex    ;
+        display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         border-bottom: 1px solid #1E1E1E;
@@ -798,8 +798,6 @@ ul.dropdown-menu.hidden-sm-down {
         flex-direction: row;
     }
 
-
-
     #donations .product article .thumbnail-top {
         width: 30%;
         height: 25rem;
@@ -831,7 +829,6 @@ ul.dropdown-menu.hidden-sm-down {
     /*donation details*/
     #donation_details.donation-container {
         width: 100%;
-
         display: flex;
         flex-direction: column;
         background: #FFFDF1;
@@ -901,5 +898,37 @@ ul.dropdown-menu.hidden-sm-down {
     #donation_details .donation-about{
         padding: 10%;
         border-bottom: 1px solid rgba(0, 0, 0, .25);
+    }
+    /*shopping-cart*/
+    .card {
+        background-color: unset;
+    }
+    .card .card-block .h1{
+        padding: 1rem 0;
+    }
+    .cart-grid-body{
+        padding-left:5%;
+    }
+    .card.cart-container, .card.cart-summary{
+        background-color: unset;
+    }
+
+    .card .charity-block .donation-btn .btn {
+        margin: 0;
+    }
+
+    .card .cart-item {
+        border-bottom: 1px solid rgba(0, 0, 0, .25);
+    }
+
+    .card .cart-item .price, .card .cart-item .text-info, .card .cart-item .text-info:hover{
+        color: #98B400 !important;;
+    }
+
+    .card input.form-control, .card .btn.btn-touchspin{
+        background: #FFFDF1;
+    }
+    .product-line-grid {
+        text-align: justify;
     }
 }
