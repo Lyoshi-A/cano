@@ -121,14 +121,23 @@ body {
     margin: .4rem;
 }
 
+#header .header-nav .cart-preview.active {
+    color: #1E1E1E;
+    background: #F3FC54;
+}
 
 #header .header-nav .cart-preview a:hover, .btn:hover {
     color: #F3FC54;
     background: #1E1E1E;
     border-color: transparent;
 }
+/*#header .header-nav .blockcart.active a:hover, #header .header-nav .blockcart a:hover {*/
+/*    color: #F3FC54;*/
+/*    background: #1E1E1E;*/
+/*    border-color: transparent;*/
+/*}*/
 
-#header .header-nav .blockcart a:hover, #header .header-nav .cart-preview a, #header .header-nav .cart-preview i {
+#header .header-nav .cart-preview a, #header .header-nav .cart-preview i, #header .header-nav .cart-preview.active a, #header .header-nav .cart-preview.active i {
     color: #1E1E1E;
 }
 
@@ -154,7 +163,7 @@ body {
     padding: 10px;
     background-color: #F3FC54;
     color: #1E1E1E;
-    border-radius: 24px;
+    border-radius: 14px;
     border: 1px solid #1E1E1E;
 }
 
@@ -652,5 +661,245 @@ ul.dropdown-menu.hidden-sm-down {
     border: 1px solid rgba(0, 0, 0, .25);
 }
 
+/*donation*/
+    #donation.category-header {
+        width: 100%;
+        height: 555px;
+        position: relative;
+        max-height: 100%;
+        display: flex;
+        flex-direction: row;
+        background: #F3FC54;
+    }
 
+    #donation .category-header-main {
+        width: 65%;
+        position: relative;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    #donation .category-header-top {
+        height: 40%;
+    }
+
+    #donation .category-header-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+    }
+
+    #donation img.im2 {
+        object-fit: cover;
+        object-position: 30% 45%;
+        width: 40rem;
+        height: 100%;
+    }
+
+    #donation .name {
+        font-size: 4rem;
+        font-weight: 500;
+        line-height: 4rem;
+        text-align: left;
+        color: #000;
+        text-transform: uppercase;
+        padding: 10%;
+    }
+    #donation .description {
+        text-align: left;
+        padding: 5%;
+        color: #000;
+    }
+
+    #donation img.im7 {
+        object-fit: cover;
+        object-position: 80% 45%;
+        height: 34.5em;
+        width: 32rem;
+    }
+
+    #donation_steps.donation-hiw {
+        padding: 1% 5%;
+        max-height: 100%;
+        display: flex    ;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border-bottom: 1px solid #1E1E1E;
+    }
+
+    #donation_steps .donation-hiw-step {
+        height: 9rem;
+        width: 12rem;
+        text-align: center;
+        justify-items: center;
+    }
+
+    #donation_steps .step {
+        background: #F3FC54;
+        border-radius: 50%;
+        border: 0;
+        width: 3rem;
+        height: 3rem;
+        margin: 1rem;
+        padding: 0.5rem;
+    }
+
+    #donation_steps img {
+        color: #1E1E1E;
+        width: 100%;
+        height: 100%;
+    }
+
+    #donation_steps p {
+        color: #1E1E1E;
+    }
+
+    section#donations {
+        margin: 0 5%;
+    }
+
+    #donations .select-title {
+        border-radius: 24px;
+        width: 10rem;
+        background: transparent;
+    }
+
+    #donations .total-products p {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2rem;
+        text-align: left;
+        color: #1E1E1E;
+    }
+
+    #donations .products.row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #donations .products-selection {
+        margin:2%;
+    }
+
+    #donations .product {
+        width:100%;
+        padding: 0;
+        border-bottom: 1px solid #1E1E1E;
+    }
+
+    #donations .product article {
+        text-align: left;
+    }
+
+    #donations .product article .thumbnail-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+
+    #donations .product article .thumbnail-top {
+        width: 30%;
+        height: 25rem;
+    }
+
+    #donations .product article .donation-description {
+        padding: 5%;
+        width: 70%;
+    }
+
+    #donations .product .donation-title {
+        font-size: 1.5rem;
+        color: #1E1E1E;
+        margin-bottom: 1rem;
+    }
+    #donations .product .donation-desc p {
+        font-size: 1rem;
+        color: #1E1E1E;
+
+    }
+
+    #donations a.btn.btn-default {
+        background: transparent;
+        color: #1E1E1E;
+        border-radius: 24px;
+        border: 1px solid #1E1E1E;
+    }
+
+    /*donation details*/
+    #donation_details.donation-container {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        background: #FFFDF1;
+    }
+
+    #donation_details .donation-header-main {
+        width: 100%;
+        position: relative;
+        max-height: 100%;
+        display: flex;
+        flex-direction: row;
+        background: #F3FC54;
+    }
+
+    #donation_details .donation-header-text {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        text-align: left;
+        padding-left: 10%;
+    }
+
+    #donation_details .donation-header-text a{
+        margin: 3rem 0;
+    }
+    #donation_details .donation-header-text .name{
+        font-size: 4rem;
+        font-weight: 500;
+        line-height: 4rem;
+        text-align: left;
+        color: #000;
+        text-transform: uppercase;
+        padding: 10%;
+    }
+    #donation_details .donation-header-text .description{
+        padding-left: 40%;
+        padding-right: 5%;
+        font-size: .9375rem;
+        font-weight: 400;
+        color: #000;
+    }
+    #donation_details .donation-header-text .description p{
+        font-size: 1rem;
+        font-weight: 400;
+        color: #000;
+    }
+    #donation_details .donation-header-bottom {
+        width: 50%;
+    }
+
+    #donation_details .donation-header-bottom img {
+        width: 100%;
+    }
+    #donation_details .donation-description {
+        padding: 10%;
+        border-bottom: 1px solid rgba(0, 0, 0, .25);
+    }
+
+    #donation_details .donation-description p{
+        font-size: 1rem;
+        font-weight: 400;
+        color: #000;
+    }
+
+    #donation_details .donation-about{
+        padding: 10%;
+        border-bottom: 1px solid rgba(0, 0, 0, .25);
+    }
 }

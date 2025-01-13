@@ -19,8 +19,19 @@ body {
     color: #1E1E1E;
     border-radius: 24px;
     border: 1px solid #1E1E1E;
-    margin: .4rem;
+    margin: 0rem;
 }
+
+    #header .header-nav .cart-preview.active, #header .header-nav .cart-preview.active a, #header .header-nav .cart-preview.active i {
+        background: #F3FC54;
+        color: #1E1E1E;
+    }
+
+    /*#header .header-nav .blockcart.active a:hover, #header .header-nav .cart-preview.active a, #header .header-nav .cart-preview.active i {*/
+    /*    color: #F3FC54;*/
+    /*    background: #1E1E1E;*/
+    /*    border-color: transparent;*/
+    /*}*/
 
 #header.is-open .popup-menu {
     opacity: 1;
@@ -376,5 +387,248 @@ a.btn.btn-default {
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, .25);
 }
+
+    /*donation*/
+    #donation.category-header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #F3FC54;
+    }
+
+    #donation .category-header-main {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    #donation .category-header-top {
+        height: 30%;
+    }
+
+    #donation .category-header-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+    }
+
+    #donation img.im2 {
+        object-fit: cover;
+        object-position: 0 45%;
+        width: 25rem;
+        height: 12rem;
+    }
+
+    #donation .name {
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 3rem;
+        text-align: left;
+        color: #000;
+        text-transform: uppercase;
+        padding: 10% 2% 0;
+    }
+    #donation .description {
+        text-align: left;
+        padding: 2% 2% 5% 15%;
+        color: #000;
+    }
+
+    #donation img.im7 {
+        object-fit: cover;
+        object-position: 0 45%;
+        height: 20rem;
+        width: 100%;
+    }
+
+    #donation_steps.donation-hiw {
+        max-height: 100%;
+        display: flex
+    ;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-bottom: 1px solid #1E1E1E;
+        width: 100%;
+    }
+
+    #donation_steps .donation-hiw-step {
+        height: 7rem;
+        width: 100%;
+        justify-items: center;
+    }
+
+    #donation_steps .step {
+        background: #F3FC54;
+        border-radius: 50%;
+        border: 0;
+        width: 3rem;
+        height: 3rem;
+        margin: 1rem;
+        padding: 0.5rem;
+    }
+
+    #donation_steps img {
+        color: #1E1E1E;
+        width: 100%;
+        height: 100%;
+    }
+
+    #donation_steps p {
+        color: #1E1E1E;
+    }
+
+    section#donations {
+        margin: 0 2%;
+    }
+
+    #donations .select-title {
+        border-radius: 24px;
+        width: 10rem;
+        background: transparent;
+    }
+
+    #donations .total-products .dropdown {
+        text-align: right;
+    }
+
+    #donations .total-products p {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2rem;
+        text-align: left;
+        color: #1E1E1E;
+    }
+
+    #donations .products.row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #donations .products-selection {
+        margin:2%;
+    }
+
+    #donations .product {
+        width:100%;
+        padding: 0;
+        border-bottom: 1px solid #1E1E1E;
+    }
+
+    #donations .product article {
+        text-align: left;
+    }
+
+    #donations .product article .thumbnail-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #donations .product article .thumbnail-top {
+        width: 100%;
+    }
+
+    #donations .product article .thumbnail-top img {
+        width: 100%;
+    }
+
+    #donations .product article .donation-description {
+        padding: 1%;
+        width: 100%;
+    }
+
+    #donations .product .donation-title {
+        font-size: 1.2rem;
+        color: #1E1E1E;
+        margin-bottom: 1rem;
+    }
+
+    #donations .product .donation-desc p {
+        font-size: 0.7rem;
+        color: #1E1E1E;
+    }
+
+    #donations a.btn.btn-default {
+        background: transparent;
+        color: #1E1E1E;
+        border-radius: 24px;
+        border: 1px solid #1E1E1E;
+    }
+    /*donation details*/
+    #donation_details.donation-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #FFFDF1;
+    }
+
+    #donation_details .donation-header-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #F3FC54;
+    }
+
+    #donation_details .donation-header-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        text-align: left;
+        padding-left: 1%;
+    }
+
+    #donation_details .donation-header-text a{
+        margin: 3rem 0;
+    }
+    #donation_details .donation-header-text .name{
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2rem;
+        text-align: left;
+        color: #000;
+        text-transform: uppercase;
+        padding: 2%;
+    }
+    #donation_details .donation-header-text .description{
+        padding-left: 2%;
+        padding-right: 5%;
+        font-size: .9375rem;
+        font-weight: 400;
+        color: #000;
+    }
+    #donation_details .donation-header-text .description p{
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #000;
+    }
+    #donation_details .donation-header-bottom {
+        width: 100%;
+    }
+
+    #donation_details .product-cover {
+        margin: 0;
+    }
+
+    #donation_details .donation-header-bottom img {
+        width: 100%;
+    }
+    #donation_details .donation-description {
+        padding: 2%;
+        border-bottom: 1px solid rgba(0, 0, 0, .25);
+    }
+
+    #donation_details .donation-description p{
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #000;
+    }
+
+    #donation_details .donation-about{
+        padding: 2%;
+        border-bottom: 1px solid rgba(0, 0, 0, .25);
+    }
 
 }

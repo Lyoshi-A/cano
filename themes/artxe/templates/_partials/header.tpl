@@ -71,7 +71,8 @@
     <ul>
       <li><p>01</p><a href="#">Artworks</a></li>
       <li><p>02</p><a href="#">artists</a></li>
-      <li><p>03</p><a href="#">charity</a></li>
+      {assign var="categoryLink" value=$link->getCategoryLink(20)}
+      <li><p>03</p><a href="{$categoryLink}">charity</a></li>
       <li><p>04</p><a href="#">buy & sell</a></li>
       <li><p>05</p><a href="#">about</a></li>
     </ul>

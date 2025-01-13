@@ -22,16 +22,11 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{extends file=$layout}
 
-{block name='head_microdata_special'}
-  {include file='_partials/microdata/product-list-jsonld.tpl' listing=$listing}
-{/block}
+{capture assign="productClasses"}{if !empty($productClass)}{$productClass}{else}col-xs-12 col-sm-6 col-xl-4{/if}{/capture}
 
-{block name='content'}
-    {if ($category.id == 20)}
-        {include file='catalog/listing/donation-list.tpl'}
-    {else}
-        {include file='catalog/listing/standart-list.tpl'}
-    {/if}
-{/block}
+<div class="products{if !empty($cssClass)} {$cssClass}{/if}">
+    {foreach from=$products item="product" key="position"}
+        {include file="catalog/_partials/miniatures/donation.tpl" product=$product position=$position productClasses=$productClasses}
+    {/foreach}
+</div>

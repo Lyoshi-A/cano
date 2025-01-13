@@ -403,7 +403,6 @@ class WkCharityDonation extends Module
                 ]);
 
                 return dirname(__FILE__) . '/views/templates/front/checkout-donation.tpl';
-//                return dirname(__FILE__) . '/templates/checkout/_partials/donation.tpl';
             }
         }
         if ('catalog/_partials/quickview' == $params['template_file']) {

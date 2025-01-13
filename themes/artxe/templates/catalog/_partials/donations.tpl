@@ -22,16 +22,17 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{extends file=$layout}
+<div id="js-donation-list">
+  {include file="catalog/_partials/donationlist.tpl" products=$listing.products cssClass="row"}
 
-{block name='head_microdata_special'}
-  {include file='_partials/microdata/product-list-jsonld.tpl' listing=$listing}
-{/block}
+  {block name='pagination'}
+    {include file='_partials/pagination.tpl' pagination=$listing.pagination}
+  {/block}
 
-{block name='content'}
-    {if ($category.id == 20)}
-        {include file='catalog/listing/donation-list.tpl'}
-    {else}
-        {include file='catalog/listing/standart-list.tpl'}
-    {/if}
-{/block}
+  <div class="hidden-md-up text-xs-right up">
+    <a href="#header" class="btn btn-secondary">
+      {l s='Back to top' d='Shop.Theme.Actions'}
+      <i class="material-icons">&#xE316;</i>
+    </a>
+  </div>
+</div>
