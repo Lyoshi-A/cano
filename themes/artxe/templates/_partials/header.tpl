@@ -51,7 +51,7 @@
           {/if}
         </div>
           <div class="col-md-7 right-nav">
-              {hook h='displayNav1'}
+{*              {hook h='displayNav1'}*}
               {hook h='displayNav2'}
           </div>
         </div>
@@ -74,10 +74,10 @@
       <li><p>02</p><a href="#">artists</a></li>
       {assign var="categoryLink" value=$link->getCategoryLink(20)}
       <li><p>03</p><a href="{$categoryLink}">charity</a></li>
-      {assign var="securePayment" value=$link->getPageLink('secure-payment', true)}
+      {assign var="securePayment" value=$link->getCMSLink(5)}
       <li><p>04</p><a href="{$securePayment}">buy & sell</a></li>
-      {assign var="abousUs" value=$link->getPageLink('abous-us', true)}
-      <li><p>05</p><a href="{$abousUs}">about</a></li>, true
+      {assign var="abousUs" value=$link->getCMSLink(4)}
+      <li><p>05</p><a href="{$abousUs}">about</a></li>
     </ul>
     <img class="im6" src="https://artxe.lyoshi.me/img/cms/8b3e6ed0f7237a53f918779368f6fc1f_.png" alt="8b3e6ed0f7237a53f918779368f6fc1f_.png" />
   </div>
