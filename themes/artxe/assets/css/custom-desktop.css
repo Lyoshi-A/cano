@@ -9,6 +9,10 @@ body {
     background: #FFFDF1;
 }
 
+body#checkout section.checkout-step {
+    background: #FFFDF1;
+}
+
 #header {
     background: #FFFDF1;
 }

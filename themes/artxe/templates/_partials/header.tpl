@@ -50,8 +50,8 @@
             {/if}
           {/if}
         </div>
-
           <div class="col-md-7 right-nav">
+              {hook h='displayNav1'}
               {hook h='displayNav2'}
           </div>
         </div>
@@ -69,12 +69,15 @@
   </nav>
   <div class="popup-menu">
     <ul>
-      <li><p>01</p><a href="#">Artworks</a></li>
+      {assign var="artWorks" value=$link->getCategoryLink(3)}
+      <li><p>01</p><a href="{$artWorks}">Artworks</a></li>
       <li><p>02</p><a href="#">artists</a></li>
       {assign var="categoryLink" value=$link->getCategoryLink(20)}
       <li><p>03</p><a href="{$categoryLink}">charity</a></li>
-      <li><p>04</p><a href="#">buy & sell</a></li>
-      <li><p>05</p><a href="#">about</a></li>
+      {assign var="securePayment" value=$link->getPageLink('secure-payment', true)}
+      <li><p>04</p><a href="{$securePayment}">buy & sell</a></li>
+      {assign var="abousUs" value=$link->getPageLink('abous-us', true)}
+      <li><p>05</p><a href="{$abousUs}">about</a></li>, true
     </ul>
     <img class="im6" src="https://artxe.lyoshi.me/img/cms/8b3e6ed0f7237a53f918779368f6fc1f_.png" alt="8b3e6ed0f7237a53f918779368f6fc1f_.png" />
   </div>
