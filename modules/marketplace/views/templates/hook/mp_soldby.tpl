@@ -38,7 +38,7 @@
 {*							<span>{$mp_seller_info.shop_name|escape:'htmlall':'UTF-8'}</span>*}
 {*						</a>*}
 {*					</div>*}
-
+		           {if isset($supplier)}
 					<div class="wk-sold-by-box">
 						<div>
 							<img src="{$supplier.image|escape:'htmlall':'UTF-8'}" class="wk-shop-default-icon" >
@@ -50,6 +50,13 @@
 							</a>
 						</div>
 					</div>
+				   {else if}
+					 <pre>
+						 {$seller_product|@var_dump}
+						 {$supplier|@var_dump}
+						 {$suppliers|@var_dump}
+					 </pre>
+				   {/if}
 {*					{if Configuration::get('WK_MP_REVIEW_SETTINGS') && isset($totalReview)}*}
 {*						{block name='mp-seller-rating-summary'}*}
 {*							{include file='module:marketplace/views/templates/front/seller/_partials/seller-rating-summary.tpl'}*}

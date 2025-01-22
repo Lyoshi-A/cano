@@ -623,6 +623,7 @@ class Marketplace extends CarrierModule
                     'seller_product' => $sellerProduct,
                     'mp_seller_info' => $seller,
                     'supplier' => $supplierInfo,
+                    'suppliers' => $suppliersInfo,
                     'sellerprofile_link' => $this->context->link->getModuleLink(
                         'marketplace',
                         'sellerprofile',
