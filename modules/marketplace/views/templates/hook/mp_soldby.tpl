@@ -52,9 +52,10 @@
 					</div>
 				   {else}
 					 <pre>
-						 {$mp_seller_info|@var_dump}
-						 {$supplier|@var_dump}
-						 {$suppliers|@var_dump}
+						 $mp_seller_info - {$mp_seller_info|@var_dump}
+						 $supplier - {$supplier|@var_dump}
+						 $suppliers - {$suppliers|@var_dump}
+						 $seller_product - {$seller_product|@var_dump}
 					 </pre>
 				   {/if}
 {*					{if Configuration::get('WK_MP_REVIEW_SETTINGS') && isset($totalReview)}*}
