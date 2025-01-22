@@ -39,6 +39,11 @@
 {*						</a>*}
 {*					</div>*}
 		           {if isset($supplier)}
+					   <pre>
+						 {$seller_product|@var_dump}
+						   {$supplier|@var_dump}
+						   {$suppliers|@var_dump}
+					 </pre>
 					<div class="wk-sold-by-box">
 						<div>
 							<img src="{$supplier.image|escape:'htmlall':'UTF-8'}" class="wk-shop-default-icon" >
@@ -50,7 +55,7 @@
 							</a>
 						</div>
 					</div>
-				   {else if}
+				   {else}
 					 <pre>
 						 {$seller_product|@var_dump}
 						 {$supplier|@var_dump}
