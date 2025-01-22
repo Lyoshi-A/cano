@@ -566,11 +566,63 @@ class Marketplace extends CarrierModule
                         ['id_mp_product' => $sellerProduct['id_mp_product']]
                     ));
                 }
+
+                $objMpSupplier = new WkMpSuppliers();
+                $suppliersInfo = $objMpSupplier->getSuppliersBySellerId($seller['id_seller']);
+                $supplierInfo = [];
+                foreach ($suppliersInfo as $singleSupplier) {
+                    if ($singleSupplier['id_wk_mp_supplier'] === $sellerProduct['id_supplier']) {
+                        if (file_exists(_PS_MODULE_DIR_ . 'marketplace/views/img/mpsuppliers/' . $singleSupplier['id_wk_mp_supplier'] . '.jpg')) {
+                            $singleSupplier['image'] = _MODULE_DIR_ . 'marketplace/views/img/mpsuppliers/' .
+                                $singleSupplier['id_wk_mp_supplier'] . '.jpg';
+                        } else {
+                            $singleSupplier['image'] = _MODULE_DIR_ . 'marketplace/views/img/mpsuppliers/default_supplier.png';
+                        }
+                        $supplierInfo = $singleSupplier;
+                    }
+                }
+
+                $showPriceByCustomerGroup = 1;
+                $mpProduct = WkMpSellerProduct::getSellerProductWithPs($seller['id_seller'], true);
+                if ($mpProduct) {
+                    $activeProduct = [];
+                    foreach ($mpProduct as $productDetails) {
+                        if (($productDetails['visibility'] == 'both')
+                            || ($productDetails['visibility'] == 'catalog')
+                        ) {
+                            $product = new Product(
+                                $productDetails['id_ps_product'],
+                                true,
+                                $this->context->language->id
+                            );
+                            $productDetails['retail_price'] = WkMpHelper::displayPrice(
+                                $product->getPriceWithoutReduct(true, $product->getWsDefaultCombination())
+                            );
+                            $productDetails['price'] = WkMpHelper::displayPrice($product->getPrice(false));
+
+                            $activeProduct[] = $productDetails;
+                        }
+                    }
+
+
+                    if ($activeProduct) {
+                        $this->context->smarty->assign('mp_shop_product', $activeProduct);
+                    }
+                }
+
+//                $productList = WkMpSuppliers::getProductListByMpSupplierAndSeller(
+//                    $sellerProduct['id_supplier'],
+//                    $seller['id_seller'],
+//                    $this->context->language->id
+//                );
                 // END of Edit product button section
 
                 $this->context->smarty->assign([
                     'product_page' => 1,
+                    'showPriceByCustomerGroup' => $showPriceByCustomerGroup,
+                    'seller_product' => $sellerProduct,
                     'mp_seller_info' => $seller,
+                    'supplier' => $supplierInfo,
                     'sellerprofile_link' => $this->context->link->getModuleLink(
                         'marketplace',
                         'sellerprofile',
@@ -741,6 +793,26 @@ class Marketplace extends CarrierModule
             'module-marketplace-mpheader-js',
             'modules/' . $this->name . '/views/js/mp_header.js',
             ['position' => 'bottom', 'priority' => 999]
+        );
+
+        $this->context->controller->registerJavascript(
+            'bxslider',
+            'modules/' . $this->name . '/views/js/jquery.bxslider.js'
+        );
+
+        $this->context->controller->registerJavascript(
+            'mp-jquery-raty-min',
+            'modules/' . $this->name . '/views/js/libs/jquery.raty.min.js'
+        );
+
+        // mp product slider
+        $this->context->controller->registerStylesheet(
+            'ps_gray',
+            'modules/' . $this->name . '/views/css/product_slider_pager/ps_gray.css'
+        );
+        $this->context->controller->registerJavascript(
+            'mp_product_slider-js',
+            'modules/' . $this->name . '/views/js/mp_product_slider.js'
         );
 
         if (Tools::getValue('controller') == 'addproduct' || Tools::getValue('controller') == 'updateproduct') {

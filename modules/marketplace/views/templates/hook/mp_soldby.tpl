@@ -30,21 +30,38 @@
 	{if isset($mp_seller_info)}
 		<div class="clearfix wk_soldby_link">
 			{* Display seller rating *}
-			{if isset($WK_MP_SELLER_DETAILS_ACCESS_9)}
+{*			{if isset($WK_MP_SELLER_DETAILS_ACCESS_9)}*}
 				<div class="wk-product-page-seller-rating">
+{*					<div class="wk-sold-by-box">*}
+{*						<img class="wk-shop-default-icon" src="{$shop_logo_path|escape:'htmlall':'UTF-8'}">*}
+{*						<a id="wk-profileconnect" title="{l s='Visit Shop' mod='marketplace'}" target="_blank" href="{$shopstore_link|escape:'htmlall':'UTF-8'}">*}
+{*							<span>{$mp_seller_info.shop_name|escape:'htmlall':'UTF-8'}</span>*}
+{*						</a>*}
+{*					</div>*}
+
 					<div class="wk-sold-by-box">
-						<img class="wk-shop-default-icon" src="{$shop_logo_path|escape:'htmlall':'UTF-8'}">
-						<a id="wk-profileconnect" title="{l s='Visit Shop' mod='marketplace'}" target="_blank" href="{$shopstore_link|escape:'htmlall':'UTF-8'}">
-							<span>{$mp_seller_info.shop_name|escape:'htmlall':'UTF-8'}</span>
-						</a>
+						<div>
+							<img src="{$supplier.image|escape:'htmlall':'UTF-8'}" class="wk-shop-default-icon" >
+							<a href="{$link->getModuleLink('marketplace', 'mpsupplierproductslist', ['id' => $supplier.id_wk_mp_supplier])|escape:'htmlall':'UTF-8'}">{$supplier.name|escape:'htmlall':'UTF-8'}</a>
+						</div>
+						<div>
+							<a class="btn btn-primary btn-sm" href="{$link->getModuleLink('marketplace', 'mpsupplierproductslist', ['id' => $supplier.id_wk_mp_supplier])|escape:'htmlall':'UTF-8'}" target="_blank">
+								Go to artist’s profile
+							</a>
+						</div>
 					</div>
-					{if Configuration::get('WK_MP_REVIEW_SETTINGS') && isset($totalReview)}
-						{block name='mp-seller-rating-summary'}
-							{include file='module:marketplace/views/templates/front/seller/_partials/seller-rating-summary.tpl'}
+{*					{if Configuration::get('WK_MP_REVIEW_SETTINGS') && isset($totalReview)}*}
+{*						{block name='mp-seller-rating-summary'}*}
+{*							{include file='module:marketplace/views/templates/front/seller/_partials/seller-rating-summary.tpl'}*}
+{*						{/block}*}
+{*					{/if}*}
+					<div class="products row">
+						{block name='mp_product_slider'}
+							{include file='module:marketplace/views/templates/front/_partials/mp-product-slider.tpl'}
 						{/block}
-					{/if}
+					</div>
 				</div>
-			{/if}
+{*			{/if}*}
 		</div>
 	{/if}
 {/if}

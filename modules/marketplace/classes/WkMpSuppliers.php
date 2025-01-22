@@ -367,6 +367,29 @@ class WkMpSuppliers extends ObjectModel
         return false;
     }
 
+    public static function getProductListByMpSupplierAndSeller($idMpSupplier, $idSeller, $id_lang)
+    {
+        if ($idMpSupplier && $idSeller) {
+            return DB::getInstance()->executeS(
+                'SELECT 
+                   pl.`name` as product_name, 
+                   p.*,
+                   mpp.`id_mp_product`,
+                   mps.`id_wk_mp_supplier`,  
+                   mps.`id_ps_supplier`
+                FROM `' . _DB_PREFIX_ . 'wk_mp_seller_product` mpp
+                INNER JOIN `' . _DB_PREFIX_ . 'wk_mp_suppliers` mps ON(mpp.`id_seller` = mps.`id_seller` AND mpp.`id_seller` = ' . (int) $idSeller . ' AND mps.`id_wk_mp_supplier` = ' . (int) $idMpSupplier . ')
+                LEFT JOIN `' . _DB_PREFIX_ . 'product_lang` pl 
+                ON (mpp.id_ps_product = pl.`id_product` AND pl.`id_lang` = ' . (int) $id_lang . ')
+                JOIN `' . _DB_PREFIX_ . 'product` p 
+                ON (mpp.id_ps_product = p.`id_product`)'
+
+            );
+        }
+
+        return false;
+    }
+
     /**
      * Get seller product suppliers by MP product id
      *

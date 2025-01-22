@@ -57,11 +57,11 @@
             {/if}
           >
             <i class="material-icons shopping-cart">&#xE547;</i>
-            {l s='Add to cart' d='Shop.Theme.Actions'}
+            {l s='Buy this artwork' d='Shop.Theme.Actions'}
           </button>
         </div>
 
-        {hook h='displayProductActions' product=$product}
+{*        {hook h='displayProductActions' product=$product}*}
       </div>
     {/block}
 

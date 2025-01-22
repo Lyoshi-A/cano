@@ -363,7 +363,7 @@ body footer#footer, .wk_pd_0{
 	font-size: 11px;
 }
 .wk-forgot a:hover {
-	color: #24b9d7 !important;
+	color: #98B400 !important;
 }
 #form_acc_info {
 	margin: 10px 20px;
@@ -383,7 +383,7 @@ body footer#footer, .wk_pd_0{
 .wk_loginform {
 	vertical-align: unset;
 	color: #fff;
-	background-color: #24b9d7;
+	background-color: #98B400;
 	border-color: transparent;
 }
 #login_email, #login_passwd,

@@ -17,7 +17,7 @@
 * @license https://opensource.org/licenses/AFL-3.0 Academic Free License version 3.0
 *}
 
-{if isset($WK_MP_SELLER_DETAILS_ACCESS_8)}
+{*{if isset($WK_MP_SELLER_DETAILS_ACCESS_8)}*}
 <div class="box-account">
 	<div class="box-content">
 		<div class="row">
@@ -25,6 +25,9 @@
 				<strong>{l s='Recent products' mod='marketplace'}</strong>
 			</label>
 		</div>
+{*		<pre>*}
+{*			{$mp_shop_product[0]|@var_dump}*}
+{*		</pre>*}
 		{if isset($mp_shop_product) && !empty($mp_shop_product)}
 			<div id="product-slider_block_center" class="wk-product-slider">
 				<ul class="mp-prod-slider {if $mp_shop_product|@count > 3}mp-bx-slider{/if}">
@@ -65,4 +68,4 @@
 		{/if}
 	</div>
 </div>
-{/if}
+{*{/if}*}
