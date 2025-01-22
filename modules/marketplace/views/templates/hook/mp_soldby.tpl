@@ -38,7 +38,7 @@
 {*							<span>{$mp_seller_info.shop_name|escape:'htmlall':'UTF-8'}</span>*}
 {*						</a>*}
 {*					</div>*}
-		           {if isset($supplier)&&is_array(supplier)&&sizeof(supplier)>0}
+		           {if isset($supplier)&&isset($supplier.name)}
 					<div class="wk-sold-by-box">
 						<div>
 							<img src="{$supplier.image|escape:'htmlall':'UTF-8'}" class="wk-shop-default-icon" >
