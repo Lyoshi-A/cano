@@ -571,7 +571,8 @@ class Marketplace extends CarrierModule
                 $suppliersInfo = $objMpSupplier->getSuppliersBySellerId($seller['id_seller']);
                 $supplierInfo = [];
                 foreach ($suppliersInfo as $singleSupplier) {
-                    if ($singleSupplier['id_wk_mp_supplier'] === $sellerProduct['id_supplier']) {
+                    //id_wk_mp_supplier ->id_ps_supplier
+                    if ($singleSupplier['id_ps_supplier'] === $sellerProduct['id_supplier']) {
                         if (file_exists(_PS_MODULE_DIR_ . 'marketplace/views/img/mpsuppliers/' . $singleSupplier['id_wk_mp_supplier'] . '.jpg')) {
                             $singleSupplier['image'] = _MODULE_DIR_ . 'marketplace/views/img/mpsuppliers/' .
                                 $singleSupplier['id_wk_mp_supplier'] . '.jpg';
