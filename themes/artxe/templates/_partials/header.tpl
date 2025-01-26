@@ -71,7 +71,8 @@
     <ul>
       {assign var="artWorks" value=$link->getCategoryLink(3)}
       <li><p>01</p><a href="{$artWorks}">Artworks</a></li>
-      <li><p>02</p><a href="#">artists</a></li>
+      {assign var="BaseLink" value=$link->getBaseLink()}
+      <li><p>02</p><a href="{$BaseLink}en/suppliers">artists</a></li>
       {assign var="categoryLink" value=$link->getCategoryLink(20)}
       <li><p>03</p><a href="{$categoryLink}">charity</a></li>
       {assign var="securePayment" value=$link->getCMSLink(5)}
