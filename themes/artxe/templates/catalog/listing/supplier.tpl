@@ -22,13 +22,109 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{extends file='catalog/listing/product-list.tpl'}
+{extends file=$layout}
 
-{block name='product_list_header'}
-  <h1>{l s='List of products by supplier %s' sprintf=[$supplier.name] d='Shop.Theme.Catalog'}</h1>
-  <div id="supplier-description">{$supplier.description nofilter}</div>
+{block name='head_microdata_special'}
+  {include file='_partials/microdata/product-list-jsonld.tpl' listing=$listing}
 {/block}
 
-{block name='product_list'}
-  {include file='catalog/_partials/products.tpl' listing=$listing productClass="col-xs-12 col-sm-6 col-xl-3"}
+{block name='content'}
+  <section id="main">
+      {block name='supplier_header'}
+          <div id="supplier_header" class="supplier-header">
+              <div class="supplier-header-main">
+                  <div class="supplier-header-top">
+                      {assign var="BaseLink" value=$link->getBaseLink()}
+                      <a href="{$BaseLink}en/suppliers" id="back_to_artworks" class="btn btn-secondary">
+                          {l s='Back to All Artists' d='Shop.Theme.Actions'}
+                      </a>
+                  </div>
+                  <div class="supplier-header-text">
+                      <h1 class="name">{$supplier.name}</h1>
+                      <p class="description"></p>
+                  </div>
+              </div>
+              <div class="supplier-header-bottom">
+                  <img class="im7" src="{$supplier.image}" alt="{$supplier.name}" />
+              </div>
+          </div>
+          {*      <h1>{l s='Suppliers' d='Shop.Theme.Catalog'}</h1>*}
+      {/block}
+
+{*    {block name='product_list_header'}*}
+{*      <h1>{l s='List of products by supplier %s' sprintf=[$supplier.name] d='Shop.Theme.Catalog'}</h1>*}
+{*    {/block}*}
+
+    {block name='subcategory_list'}
+      {if isset($subcategories) && $subcategories|@count > 0}
+        {include file='catalog/_partials/subcategories.tpl' subcategories=$subcategories}
+      {/if}
+    {/block}
+
+    {hook h="displayHeaderCategory"}
+
+    <section id="products">
+      {if $listing.products|count}
+
+        {block name='product_list_top'}
+          <div id="js-product-list-top" class="row products-selection">
+            <div class="col-lg-8 h2 hleft">
+              All Artworks
+            </div>
+            <div class="col-lg-4 hright">
+              <div class="row sort-by-row">
+                {block name='sort_by'}
+                  {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
+                {/block}
+{*                {if !empty($listing.rendered_facets)}*}
+{*                  <div class="col-xs-4 col-sm-3 hidden-md-up filter-button">*}
+{*                    <button id="search_filter_toggler" class="btn btn-secondary js-search-toggler">*}
+{*                      {l s='Filter' d='Shop.Theme.Actions'}*}
+{*                    </button>*}
+{*                  </div>*}
+{*                {/if}*}
+              </div>
+            </div>
+          </div>
+        {/block}
+
+        {block name='product_list_active_filters'}
+          <div class="hidden-sm-down">
+            {$listing.rendered_active_filters nofilter}
+          </div>
+        {/block}
+
+        {block name='product_list'}
+          {include file='catalog/_partials/products.tpl' listing=$listing productClass="col-xs-12 col-sm-6 col-xl-3"}
+        {/block}
+
+        {block name='product_list_bottom'}
+          {include file='catalog/_partials/products-bottom.tpl' listing=$listing}
+        {/block}
+
+      {else}
+        <div id="js-product-list-top"></div>
+
+        <div id="js-product-list">
+          {capture assign="errorContent"}
+            <h4>{l s='No products available yet' d='Shop.Theme.Catalog'}</h4>
+            <p>{l s='Stay tuned! More products will be shown here as they are added.' d='Shop.Theme.Catalog'}</p>
+          {/capture}
+
+          {include file='errors/not-found.tpl' errorContent=$errorContent}
+        </div>
+
+        <div id="js-product-list-bottom"></div>
+      {/if}
+    </section>
+
+    {block name='product_list_footer'}
+      <div id="supplier-description">{$supplier.description nofilter}</div>
+    {/block}
+
+    {hook h="displayFooterCategory"}
+
+  </section>
 {/block}
+
+

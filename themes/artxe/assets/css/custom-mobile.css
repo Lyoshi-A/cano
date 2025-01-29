@@ -1166,5 +1166,99 @@ a.btn.btn-default {
         background: transparent;
     }
 
+    /*supplier*/
+    #supplier_header.supplier-header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #F3FC54;
+        justify-content: space-between;
+    }
 
+    #supplier_header .supplier-header-main {
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+    }
+    #supplier_header .supplier-header-top {
+        padding: 0.5rem;
+    }
+
+    #supplier_header .supplier-header-bottom {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    #supplier_header .supplier-header-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #supplier_header img.im2 {
+        object-fit: cover;
+        object-position: 30% 45%;
+        width: 30rem;
+        height: 100%;
+    }
+
+    #supplier_header .name {
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 3rem;
+        text-align: left;
+        color: #000;
+        text-transform: uppercase;
+        padding: 1rem 1rem;
+        width: 100%;
+    }
+    #supplier_header .description {
+        text-align: left;
+        /* padding: 5%; */
+        color: #000;
+        width: 100%;
+        padding-left: 45%;
+        padding-right: 15%;
+    }
+
+    #supplier_header img.im7 {
+        object-fit: cover;
+        object-position: 80% 45%;
+        height: 100%;
+        width: 100%;
+    }
+
+    #supplier_header .supplier-header-bottom .text-info {
+        height: 12.18em;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #supplier_header .supplier-header-bottom .text2 {
+        font-size: 12rem;
+        line-height: 200px;
+        color: #1e1e1e;
+    }
+
+    #supplier_header .supplier-header-bottom .text3 {
+        font-size: .8rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        text-align: left;
+        align-content: center;
+        color: #1e1e1e;
+        width: 20rem;
+    }
+
+    #supplier section#products {
+        padding: 0 5%;
+    }
+    #supplier #supplier-description{
+        border-top: 1px solid #1E1E1E;
+        padding: 5%;
+        color: #1e1e1e;
+    }
 }
