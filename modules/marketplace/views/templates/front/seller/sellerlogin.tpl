@@ -30,9 +30,9 @@
 {/if}
 {block name='product_activation'}{/block}
 
-{block name='header'}
-   {include file='module:marketplace/views/templates/front/_partials/header.tpl'}
-{/block}
+{*{block name='header'}*}
+{*   {include file='module:marketplace/views/templates/front/_partials/header.tpl'}*}
+{*{/block}*}
 
 {block name='content'}
 {if isset($parentBlock)}
@@ -309,25 +309,36 @@
 							</div>
 						{/if}
 					{/foreach}
+					<div class="col-sm-5 block-features-right">
+						<div class="item">
+							<img class="im2" src="{$urls["img_ps_url"]}cms/f380c1c1a95978d5eb4578eacab81bde_.png" alt="Features" />
+						</div>
+						<div class="item">
+							<img class="im7" src="{$urls["img_ps_url"]}cms/f99fdac17a60225d96cfd6f76ac7ee6f_.png" alt="Features" />
+						</div>
+						<div class="item">
+							<img class="im6" src="{$urls["img_ps_url"]}cms//8b3e6ed0f7237a53f918779368f6fc1f_.png" alt="Features" />
+						</div>
+					</div>
 				</div>
 			</div>
 			{* --- Terms and conditions block --- *}
-			<div class="container" style="clear: both;">
-				<div class="row">
-					{foreach from=$value['sub_block'] key=subc_k item=subc_v}
-						{if $subc_v['block_name'] == 'termscondition'}
-							<div class="col-sm-{$subc_v['width']|escape:'htmlall':'UTF-8'} tc_cont" style="background-color: {$subc_v['block_bg_color']|escape:'htmlall':'UTF-8'};">
-								{$subc_v['data']['content'] nofilter}
-							</div>
-							<style>
-								.tc_cont span {
-									color: {$subc_v['block_text_color']|escape:'htmlall':'UTF-8'} !important;
-								}
-							</style>
-						{/if}
-					{/foreach}
-				</div>
-			</div>
+{*			<div class="container" style="clear: both;">*}
+{*				<div class="row">*}
+{*					{foreach from=$value['sub_block'] key=subc_k item=subc_v}*}
+{*						{if $subc_v['block_name'] == 'termscondition'}*}
+{*							<div class="col-sm-{$subc_v['width']|escape:'htmlall':'UTF-8'} tc_cont" style="background-color: {$subc_v['block_bg_color']|escape:'htmlall':'UTF-8'};">*}
+{*								{$subc_v['data']['content'] nofilter}*}
+{*							</div>*}
+{*							<style>*}
+{*								.tc_cont span {*}
+{*									color: {$subc_v['block_text_color']|escape:'htmlall':'UTF-8'} !important;*}
+{*								}*}
+{*							</style>*}
+{*						{/if}*}
+{*					{/foreach}*}
+{*				</div>*}
+{*			</div>*}
 		{/if}
 	{/foreach}
 {/if}
@@ -340,65 +351,66 @@
 	</style>
 {/if}
 {/block}
-{block name="footer"}
-{*{if isset($error)}*}
-{*	<input type="hidden" id="wk_slerror" value="{$error|escape:'htmlall':'UTF-8'}">*}
-{*	<div class="error_block">*}
-{*		{if $error == 1}*}
-{*			{l s='Email is required.' mod='marketplace'}*}
-{*		{elseif $error == 2}*}
-{*			{l s='Invalid email address.' mod='marketplace'}*}
-{*		{elseif $error == 3}*}
-{*			{l s='Password is required.' mod='marketplace'}*}
-{*		{elseif $error == 4}*}
-{*			{l s='Invalid password.' mod='marketplace'}*}
-{*		{elseif $error == 5}*}
-{*			{l s='Please enter your valid credentials.' mod='marketplace'}*}
-{*		{elseif $error == 6}*}
-{*			{l s='Your account isn\'t available at this time, please contact us.' mod='marketplace'}*}
-{*		{elseif $error == 7}*}
-{*			{l s='Authentication failed.' mod='marketplace'}*}
-{*		{elseif $error == 8}*}
-{*			{l s='Please enter your first name.' mod='marketplace'}*}
-{*		{elseif $error == 9}*}
-{*			{l s='Please enter your last name.' mod='marketplace'}*}
-{*		{elseif $error == 11}*}
-{*			{l s='An account using this email address has already been registered.' mod='marketplace'}*}
-{*		{elseif $error == 13}*}
-{*			{l s='Shop name is required.' mod='marketplace'}*}
-{*		{elseif $error == 14}*}
-{*			{l s='Please enter valid shop name.' mod='marketplace'}*}
-{*		{elseif $error == 15}*}
-{*			{l s='Unique shop name already exist.' mod='marketplace'}*}
-{*		{elseif $error == 16}*}
-{*			{l s='Phone number is required.' mod='marketplace'}*}
-{*		{elseif $error == 17}*}
-{*			{l s='Please enter valid phone number.' mod='marketplace'}*}
-{*		{elseif $error == 18}*}
-{*			{l s='Email already exist as seller.' mod='marketplace'}*}
-{*		{elseif $error == 19}*}
-{*			{l s='Unique shop name is required.' mod='marketplace'}*}
-{*		{elseif $error == 20}*}
-{*			{l s='Please enter valid unique shop name.' mod='marketplace'}*}
-{*		{elseif $error == 21}*}
-{*			{l s='Shop name is required in default language.' mod='marketplace'}*}
-{*		{elseif $error == 22}*}
-{*			{l s='You are not registered as a seller.' mod='marketplace'}*}
-{*		{elseif $error == 23}*}
-{*			{l s='City is required field.' mod='marketplace'}*}
-{*		{elseif $error == 24}*}
-{*			{l s='Invalid city name.' mod='marketplace'}*}
-{*		{elseif $error == 25}*}
-{*			{l s='Country is required field.' mod='marketplace'}*}
-{*		{elseif $error == 26}*}
-{*			{l s='State is required field.' mod='marketplace'}*}
-{*		{elseif $error == 27}*}
-{*			{l s='Zip/postal code is required field.' mod='marketplace'}*}
-{*		{elseif $error == 28}*}
-{*			{l s='Invalid zip/postal code format.' mod='marketplace'}*}
-{*		{elseif $error == 29}*}
-{*			{l s='Invalid zip/postal code.' mod='marketplace'}*}
-{*		{/if}*}
-{*	</div>*}
-{*{/if}*}
-{/block}
+{if isset($error)}
+	<input type="hidden" id="wk_slerror" value="{$error|escape:'htmlall':'UTF-8'}">
+	<div class="error_block">
+		{if $error == 1}
+			{l s='Email is required.' mod='marketplace'}
+		{elseif $error == 2}
+			{l s='Invalid email address.' mod='marketplace'}
+		{elseif $error == 3}
+			{l s='Password is required.' mod='marketplace'}
+		{elseif $error == 4}
+			{l s='Invalid password.' mod='marketplace'}
+		{elseif $error == 5}
+			{l s='Please enter your valid credentials.' mod='marketplace'}
+		{elseif $error == 6}
+			{l s='Your account isn\'t available at this time, please contact us.' mod='marketplace'}
+		{elseif $error == 7}
+			{l s='Authentication failed.' mod='marketplace'}
+		{elseif $error == 8}
+			{l s='Please enter your first name.' mod='marketplace'}
+		{elseif $error == 9}
+			{l s='Please enter your last name.' mod='marketplace'}
+		{elseif $error == 11}
+			{l s='An account using this email address has already been registered.' mod='marketplace'}
+		{elseif $error == 13}
+			{l s='Shop name is required.' mod='marketplace'}
+		{elseif $error == 14}
+			{l s='Please enter valid shop name.' mod='marketplace'}
+		{elseif $error == 15}
+			{l s='Unique shop name already exist.' mod='marketplace'}
+		{elseif $error == 16}
+			{l s='Phone number is required.' mod='marketplace'}
+		{elseif $error == 17}
+			{l s='Please enter valid phone number.' mod='marketplace'}
+		{elseif $error == 18}
+			{l s='Email already exist as seller.' mod='marketplace'}
+		{elseif $error == 19}
+			{l s='Unique shop name is required.' mod='marketplace'}
+		{elseif $error == 20}
+			{l s='Please enter valid unique shop name.' mod='marketplace'}
+		{elseif $error == 21}
+			{l s='Shop name is required in default language.' mod='marketplace'}
+		{elseif $error == 22}
+			{l s='You are not registered as a seller.' mod='marketplace'}
+		{elseif $error == 23}
+			{l s='City is required field.' mod='marketplace'}
+		{elseif $error == 24}
+			{l s='Invalid city name.' mod='marketplace'}
+		{elseif $error == 25}
+			{l s='Country is required field.' mod='marketplace'}
+		{elseif $error == 26}
+			{l s='State is required field.' mod='marketplace'}
+		{elseif $error == 27}
+			{l s='Zip/postal code is required field.' mod='marketplace'}
+		{elseif $error == 28}
+			{l s='Invalid zip/postal code format.' mod='marketplace'}
+		{elseif $error == 29}
+			{l s='Invalid zip/postal code.' mod='marketplace'}
+		{/if}
+	</div>
+{/if}
+{*{block name="footer"}*}
+
+{*{/block}*}

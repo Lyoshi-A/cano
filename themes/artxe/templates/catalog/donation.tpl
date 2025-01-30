@@ -1,7 +1,4 @@
   <section id="main">
-{*      <pre>*}
-{*          {$urls|@var_dump}*}
-{*      </pre>*}
     <meta content="{$product.url}">
       <div id="donation_details" class="donation-container">
           <div class="donation-header-main">

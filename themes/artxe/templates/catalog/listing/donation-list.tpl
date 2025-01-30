@@ -3,7 +3,7 @@
         <div id="donation" class="category-header">
             <div class="category-header-main">
                 <div class="category-header-top">
-                    <img class="im2" src="{$urls["img_ps_url"]}cms/f380c1c1a95978d5eb4578eacab81bde_.png" alt="f380c1c1a95978d5eb4578eacab81bde_.png" />
+                    <img class="im2" src="{$urls["img_ps_url"]}cms/f380c1c1a95978d5eb4578eacab81bde_.png" alt="" />
                 </div>
                 <div class="category-header-text">
                     <h1 class="name">{$category.name}</h1>
@@ -12,7 +12,7 @@
             </div>
             <div class="category-header-bottom">
                 {assign var="cmsLink2" value=$link->getCMSLink(5)}
-                <img class="im7" src="{$urls["img_ps_url"]}cms/f99fdac17a60225d96cfd6f76ac7ee6f_.png" alt="f99fdac17a60225d96cfd6f76ac7ee6f_.png" />
+                <img class="im7" src="{$urls["img_ps_url"]}cms/f99fdac17a60225d96cfd6f76ac7ee6f_.png" alt="" />
             </div>
         </div>
         <div id="donation_steps" class="donation-hiw">

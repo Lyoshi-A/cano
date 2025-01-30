@@ -80,6 +80,6 @@
       {assign var="abousUs" value=$link->getCMSLink(4)}
       <li><p>05</p><a href="{$abousUs}">about</a></li>
     </ul>
-    <img class="im6" src="https://artxe.lyoshi.me/img/cms/8b3e6ed0f7237a53f918779368f6fc1f_.png" alt="8b3e6ed0f7237a53f918779368f6fc1f_.png" />
+    <img class="im6" src="{$urls["img_ps_url"]}cms//8b3e6ed0f7237a53f918779368f6fc1f_.png" alt="Main menu" />
   </div>
 {/block}

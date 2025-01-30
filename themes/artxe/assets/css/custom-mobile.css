@@ -1261,4 +1261,142 @@ a.btn.btn-default {
         padding: 5%;
         color: #1e1e1e;
     }
+
+    /*marketplace-sellerlogin*/
+    #module-marketplace-sellerlogin .block-configuration{
+        background: #F3FC54;
+    }
+
+    #module-marketplace-sellerlogin .block-configuration .top-block{
+        padding: 0;
+        border-bottom: 1px solid #1E1E1E;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #module-marketplace-sellerlogin .block-configuration .left-block{
+        padding: 0;
+        display: flex;
+        /*height: 33rem;*/
+        flex-direction: column;
+        justify-content: flex-end;
+
+    }
+
+    #module-marketplace-sellerlogin .block-configuration .right-block{
+        padding: 0;
+    }
+    #module-marketplace-sellerlogin .block-configuration .right-block form{
+        width: 100%;
+    }
+
+    #module-marketplace-sellerlogin .block-configuration .im-start{
+        object-fit: cover;
+        object-position: 80% 45%;
+        height: 70%;
+        width: 80%;
+    }
+
+    #module-marketplace-sellerlogin .block-configuration .t1{
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 2.5rem;
+        text-align: left;
+        color: #000;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0;
+        width: 80%;
+    }
+
+
+    /*#module-marketplace-sellerlogin .block-configuration #account_btn{*/
+    /*    cursor: pointer;*/
+    /*    padding: 10px;*/
+    /*    background-color: #F3FC54;*/
+    /*    color: #1E1E1E;*/
+    /*    border-radius: 14px;*/
+    /*    border: 1px solid #1E1E1E;*/
+    /*}*/
+
+    /*#module-marketplace-sellerlogin .block-configuration #account_btn:hover{*/
+    /*    color: #F3FC54;*/
+    /*    background: #1E1E1E;*/
+    /*    border-color: transparent;*/
+    /*}*/
+
+    #module-marketplace-sellerlogin .block-configuration .form_wrapper {
+        background-color: #F3FC54;
+        border: 0px;
+        padding: 10px 20px;
+    }
+
+    #module-marketplace-sellerlogin .block-configuration .form_wrapper input {
+        border: none !important;
+        border-bottom: 1px solid #1e1e1e !important;
+        background: none;
+    }
+
+    #module-marketplace-sellerlogin .block-features{
+        padding: 0;
+    }
+
+    #module-marketplace-sellerlogin .block-features .row{
+        margin: 0;
+    }
+
+    #module-marketplace-sellerlogin .block-features .ftr_desc{
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2rem;
+        text-align: left;
+        color: #000;
+        /*text-transform: uppercase;*/
+        padding: 1rem;
+    }
+    #module-marketplace-sellerlogin .block-features .ftr_cont{
+        padding: 5%;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right{
+        display: none;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right .item{
+        /*height: 30%;*/
+        width: 100%;
+    }
+
+    #module-marketplace-sellerlogin .block-features .ftr_cont{
+        margin-bottom: 1rem;
+    }
+
+    #module-marketplace-sellerlogin .block-features .ftr_cont .item .row{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right .item .im2{
+        object-fit: cover;
+        object-position: 80% 45%;
+        height: 10rem;
+        width: 70%;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right .item .im6{
+        object-fit: cover;
+        object-position: 80% 0;
+        height: 12rem;
+        width: 50%;
+        margin: 0 3rem;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right .item .im7{
+        object-fit: cover;
+        object-position: 10% 45%;
+        height: 25rem;
+        width: 100%;
+        margin: -2rem 9rem -8rem;
+    }
 }

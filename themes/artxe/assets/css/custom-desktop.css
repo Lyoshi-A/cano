@@ -1514,6 +1514,7 @@ ul.dropdown-menu.hidden-sm-down {
         color: #1e1e1e;
     }
 
+    /*marketplace-sellerlogin*/
     #module-marketplace-sellerlogin .block-configuration{
         background: #F3FC54;
     }
@@ -1585,6 +1586,58 @@ ul.dropdown-menu.hidden-sm-down {
     }
 
     #module-marketplace-sellerlogin .block-features{
+        padding: 0;
+    }
+
+    #module-marketplace-sellerlogin .block-features .row{
+        margin: 0;
+    }
+
+    #module-marketplace-sellerlogin .block-features .ftr_desc{
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 3rem;
+        text-align: left;
+        color: #000;
+        /*text-transform: uppercase;*/
+        padding: 1rem;
+    }
+    #module-marketplace-sellerlogin .block-features .ftr_cont{
         padding: 5%;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right .item{
+        /*height: 30%;*/
+        width: 100%;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right .item .im2{
+        object-fit: cover;
+        object-position: 80% 45%;
+        height: 10rem;
+        width: 70%;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right .item .im6{
+        object-fit: cover;
+        object-position: 80% 0;
+        height: 12rem;
+        width: 50%;
+        margin: 0 3rem;
+    }
+
+    #module-marketplace-sellerlogin .block-features .block-features-right .item .im7{
+        object-fit: cover;
+        object-position: 10% 45%;
+        height: 25rem;
+        width: 100%;
+        margin: -2rem 9rem -8rem;
     }
 }
